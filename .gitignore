@@ -1,0 +1,11 @@
+# Ignora la cartella del driver scaricato manualmente
+chromedriver-linux64/
+chromedriver
+
+# Ignora l'ambiente virtuale Python (fondamentale!)
+env/
+venv/
+
+# Ignora eventuali file di log o cache
+__pycache__/
+*.log
