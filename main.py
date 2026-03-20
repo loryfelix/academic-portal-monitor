@@ -6,5 +6,7 @@ options = webdriver.ChromeOptions()
 options.binary_location = "/usr/bin/google-chrome-stable"
 
 driver = webdriver.Chrome(service=webdriver.ChromeService(executable_path=service), options=options)
-driver.get("https://www.google.com")
+driver.get("https://webeep.polimi.it/login/index.php")
 time.sleep(5)
+print(driver.title)
+driver.quit()
