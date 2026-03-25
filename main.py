@@ -1,3 +1,4 @@
+from http import cookies
 from selenium import webdriver 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -10,23 +11,19 @@ options = webdriver.ChromeOptions()
 options.binary_location = "/usr/bin/google-chrome-stable"
 
 driver = webdriver.Chrome(service=webdriver.ChromeService(executable_path=service), options=options)
-driver.get("https://www.youtube.com/")
-time.sleep(15)    # wait for the user to log in
-
-search = driver.find_element(By.NAME, "search_query")
-search.send_keys("lo-fi")
-
-search.send_keys(Keys.RETURN)
-
-print("Ricerca effettuata")
+driver.get("https://webeep.polimi.it/my/")
+cookies = driver.get_cookies()
+time.sleep(60)    # wait for the user to log in
 
 try:
-    video = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "video-title"))
+    main_page = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "region-main-box"))
     )
 finally:
-    video.click()
-    print("video cliccato")
+    print(cookies)
+
+#search = driver.find_element(By.ID, "searchinput-69c42e5adc5dc69c42e5acfc6e3")
+#search.send_keys("Fisica")
 
 print(driver.title)
 driver.quit()
