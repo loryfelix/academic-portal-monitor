@@ -9,3 +9,6 @@ venv/
 # Ignora eventuali file di log o cache
 __pycache__/
 *.log
+
+#Ignora i file di configurazione o credenziali (se presenti)
+cookies.json
