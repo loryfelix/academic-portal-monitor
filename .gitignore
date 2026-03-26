@@ -11,4 +11,4 @@ __pycache__/
 *.log
 
 #Ignora i file di configurazione o credenziali (se presenti)
-cookies.json
+cookies.pkl
