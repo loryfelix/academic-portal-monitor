@@ -16,5 +16,6 @@ input("Log in to the academic portal and press Enter to continue...")
 with open("cookies.pkl", "wb") as file:
     pickle.dump(driver.get_cookies(), file)
 
+time.sleep(2)  # Wait for a moment to ensure cookies are saved properly
 print("Cookies saved to cookies.pkl")
 driver.quit()
